@@ -5,7 +5,7 @@ const tasks = (state = [], action) => {
   case SET_TASKS:
     return action.tasks;
   case ADDING_TASK:
-    return [ ...state, action.task];
+      return [action.task, ...state];
   case DEL_TASK:
     const newState = [...state];
     newState.splice(action.index, 1)
