@@ -9,12 +9,26 @@ class TaskItem extends Component {
     }
 
     this.handleChangeEvent = this.handleChangeEvent.bind(this)
+    this.focusUsernameInputField = this.focusUsernameInputField.bind(this)
+    this.moveCursortAtEnd = this.moveCursortAtEnd.bind(this)
   }
 
   handleChangeEvent(e) {
     this.props.updateTask(e.target.value, this.props.index)
-    this.refs.textInput.value
   }
+
+  focusUsernameInputField(input) {
+    if (input) {
+      setTimeout(() => {input.focus()}, 100);
+    }
+  }
+
+  moveCursortAtEnd(e) {
+    var temp_value = e.target.value
+    e.target.value = ''
+    e.target.value = temp_value
+  }
+  //ref={(input) => { this.textInput = input; }}
 
   render() {
     return (
@@ -23,8 +37,9 @@ class TaskItem extends Component {
           <Menu.Item>
             <Input transparent 
                    onChange={this.handleChangeEvent} 
-                   ref="textInput"
-                   defaultValue={this.state.text}/>
+                   ref={this.focusUsernameInputField}
+                   onFocus={this.moveCursortAtEnd}
+                   defaultValue={this.state.text} />
           </Menu.Item> 
           <Menu.Item position='right'>
             <Icon name='trash outline' size='large' onClick={() => this.props.deleteTask(this.props.index)} />
