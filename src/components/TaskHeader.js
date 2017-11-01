@@ -28,10 +28,3 @@ class TaskHeader extends Component {
 }
 
 export default TaskHeader;
-{/* <Container textAlign='left'>
-<Header as='h2'>Tasks</Header>
-</Container>  
-<Container textAlign='right'>
-<Button color='grey'>Add Task</Button>
-<Button color='green'>Save</Button>
-</Container> */}

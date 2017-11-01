@@ -13,7 +13,6 @@ class TaskBoard extends Component {
   }
 
   render() {
-    console.log('In',this.props.tasks)
     if (this.props.tasks) {
       return (
         <Container text style={{ marginTop: '3em' }}>  
@@ -55,11 +54,3 @@ class TaskBoard extends Component {
 }
 
 export default TaskBoard;
-
-// export default (props) => 
-//   <List selection verticalAlign='middle'>  
-//       {props.tasks.map((task, index) => {
-//         <TaskItemContainer task={task} key={index} />
-//       })}
-//   </List>      
-// ;
