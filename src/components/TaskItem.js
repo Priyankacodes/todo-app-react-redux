@@ -28,18 +28,17 @@ class TaskItem extends Component {
     e.target.value = ''
     e.target.value = temp_value
   }
-  //ref={(input) => { this.textInput = input; }}
 
   render() {
     return (
       <Segment raised textAlign='left' size='large'>
         <Menu secondary>
           <Menu.Item>
-            <Input transparent 
+            <Input transparent
                    onChange={this.handleChangeEvent} 
                    ref={this.focusUsernameInputField}
                    onFocus={this.moveCursortAtEnd}
-                   defaultValue={this.state.text} />
+                   defaultValue={this.state.text.toUpperCase()} />
           </Menu.Item> 
           <Menu.Item position='right'>
             <Icon name='trash outline' size='large' onClick={() => this.props.deleteTask(this.props.index)} />
