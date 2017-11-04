@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-    background-color: #000c00ea;
+    background-color: ${props => props.theme.navbarcolor};
     position: fixed;
     top: 0;
     left: 0;

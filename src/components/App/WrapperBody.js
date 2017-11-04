@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   margin-left: auto;
   width: 100%;
   height: 100%;
-  background-color: #c7ccc893;
+  background-color: ${props => props.theme.bodyColor};
 `;
 
 export default Wrapper;
