@@ -20,7 +20,6 @@ class TaskHeader extends Component {
             <Button color='grey' onClick={() => this.props.addTask('New Task') }>
               Add Task
             </Button>
-            <span>        </span>
             <Button color='#70DB93' disabled={this.props.saveBtn} onClick={ () => this.props.saveTasks() }>
               Save
             </Button>
