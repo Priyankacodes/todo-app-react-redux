@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Message } from 'semantic-ui-react';
 
-import TaskItem from '../components/TaskItem';
+import TaskItem from '../../components/TaskItem';
+import Wrapper from './Wrapper';
+import Message from './Message';
 
 class TaskBoard extends Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class TaskBoard extends Component {
   render() {
     if (this.props.tasks) {
       return (
-        <Container text style={{ marginTop: '3em' }}>  
+        <Wrapper>  
           {this.props.tasks.map((task, index) => {
             return <TaskItem task={task} 
                              key={task+index} 
@@ -44,7 +45,7 @@ class TaskBoard extends Component {
                    hidden={ this.props.error["save_success"] } 
                    content='Tasks saved successfully'
           />
-        </Container>    
+        </Wrapper>    
       )} else {
       return (
         <h3>Loading data...</h3>

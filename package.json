@@ -1,5 +1,5 @@
 {
-  "name": "todoApp",
+  "name": "todoapp",
   "version": "1.0.0",
   "description": "Simple TODO app in react redux",
   "main": "index.js",
@@ -15,7 +15,8 @@
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.2.3"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -26,7 +27,6 @@
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
     "style-loader": "^0.18.2",
-    "semantic-ui-react": "^0.71.2",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
   }

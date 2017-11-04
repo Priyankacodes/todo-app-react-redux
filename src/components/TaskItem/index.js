@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { List, Segment, Icon, Container, Menu, Input } from 'semantic-ui-react';
+
+import Wrapper from './Wrapper';
+import TaskHeaderWrapper from './TaskHeaderWrapper';
+import TrashIconWrapper from './TrashIconWrapper';
+import TaskNameWrapper from './TaskNameWrapper';
+import Input from './Input';
 
 class TaskItem extends Component {
   constructor(props) {
@@ -17,9 +22,9 @@ class TaskItem extends Component {
     this.props.updateTask(e.target.value, this.props.index)
   }
 
-  focusUsernameInputField(input) {
-    if (input) {
-      setTimeout(() => {input.focus()}, 100);
+  focusUsernameInputField(i) {
+    if (i) {
+      setTimeout(() => {i.focus()}, 100);
     }
   }
 
@@ -31,20 +36,20 @@ class TaskItem extends Component {
 
   render() {
     return (
-      <Segment raised textAlign='left' size='large'>
-        <Menu secondary>
-          <Menu.Item>
+      <Wrapper>
+        <TaskHeaderWrapper>
+          <TaskNameWrapper>
             <Input transparent
                    onChange={this.handleChangeEvent} 
-                   ref={this.focusUsernameInputField}
+                   ref={() => this.focusUsernameInputField()}
                    onFocus={this.moveCursortAtEnd}
                    defaultValue={this.state.text.toUpperCase()} />
-          </Menu.Item> 
-          <Menu.Item position='right'>
-            <Icon name='trash outline' size='large' onClick={() => this.props.deleteTask(this.props.index)} />
-          </Menu.Item> 
-        </Menu> 
-      </Segment>
+          </TaskNameWrapper>         
+          <TrashIconWrapper>
+            <i className="fa fa-trash-o" onClick={() => this.props.deleteTask(this.props.index)} />
+          </TrashIconWrapper> 
+        </TaskHeaderWrapper> 
+      </Wrapper>
     ) 
   }
 }      
