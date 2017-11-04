@@ -17,7 +17,7 @@ class TaskBoard extends Component {
 
 
   render() {
-    if (this.props.tasks) {
+    if (this.props.tasks.length > 0) {
       return (
         <Wrapper>  
           {this.props.tasks.map((task, index) => {
@@ -29,6 +29,7 @@ class TaskBoard extends Component {
           })}
           <Message hidden={this.props.error["save_error"]}
                    color={'#ff0033'}
+                   bcolor={'#ffe5ea'}
           >
             <CloseButton color={'#ff0033'} onClick={() => this.props.toggleError("save_error")} >
               &times;
@@ -37,6 +38,7 @@ class TaskBoard extends Component {
           </Message>
           <Message hidden={ this.props.error["load_error"] } 
                    color={'#ff0033'}
+                   bcolor={'#ffe5ea'}
           >
             <CloseButton color={'#ff0033'} onClick={() => this.props.toggleError("load_error")} >
               &times;

@@ -14,18 +14,20 @@ class TaskItem extends Component {
     }
 
     this.handleChangeEvent = this.handleChangeEvent.bind(this)
-    this.focusUsernameInputField = this.focusUsernameInputField.bind(this)
+    this.focusInputField = this.focusInputField.bind(this)
     this.moveCursortAtEnd = this.moveCursortAtEnd.bind(this)
   }
 
   handleChangeEvent(e) {
-    this.props.updateTask(e.target.value, this.props.index)
+    var val = e.target.value;
+    this.props.updateTask(val, this.props.index)
+    const element = e.target
+    console.log(element)
+    element.focus()
   }
 
-  focusUsernameInputField(i) {
-    if (i) {
-      setTimeout(() => {i.focus()}, 100);
-    }
+  focusInputField() {
+    this.textInput.focus();
   }
 
   moveCursortAtEnd(e) {
@@ -40,8 +42,8 @@ class TaskItem extends Component {
         <TaskHeaderWrapper>
           <TaskNameWrapper>
             <Input transparent
+                   inputField={input => this.inputField = input}
                    onChange={this.handleChangeEvent} 
-                   ref={() => this.focusUsernameInputField()}
                    onFocus={this.moveCursortAtEnd}
                    defaultValue={this.state.text.toUpperCase()} />
           </TaskNameWrapper>         

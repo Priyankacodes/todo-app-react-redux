@@ -7,8 +7,9 @@ const error = (state = {
     }, action) => {
   switch (action.type) {
   case TOGGLE_ERROR:
-    state[action.errorType] = !state[action.errorType]
-    return {...state}       
+    let newState = {...state}
+    newState[action.errorType] = !newState[action.errorType]
+    return newState;   
   default:
     return state;
   }

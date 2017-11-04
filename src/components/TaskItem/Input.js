@@ -9,6 +9,7 @@ const Input = styled.input`
     font-weight: 400;
     letter-spacing: 2px;
     text-shadow: 0 0 1px rgba(133, 138, 131, 0.904);
+    ref=${props => props.inputField}
 `;
 
 export default Input;
