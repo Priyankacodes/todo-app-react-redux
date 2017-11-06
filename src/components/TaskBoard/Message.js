@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 const Message = styled.div`
-    position: fixed;
+    position: absolute;
+    z-index: 1;
     width: 400px;
     height: 22px;
-    top: 300;
+    top: 200;
     right: 0;
     margin: 1em;    
     padding: 0.5em 0.5em;

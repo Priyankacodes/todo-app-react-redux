@@ -8,6 +8,8 @@ const Wrapper = styled.div`
     -webkit-box-shadow: 1px 1px 2px 1px #ccc;
     box-shadow : 1px 1px 3px 1px #ccc;
     margin-top: 8px;
+    z-index: 0;
+    position: relative;
 `;
 
 export default Wrapper;
